@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314812134896",
+    "project_id": "online-store-f0897",
+    "storage_bucket": "online-store-f0897.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314812134896:android:77be67b21658600e7dd935",
+        "android_client_info": {
+          "package_name": "in.innovateria.onlinestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCabSxD7BWu7dZW7_EqF_x5B_hrYrdbIX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

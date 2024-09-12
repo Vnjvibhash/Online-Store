@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Online Store</string>
+    <string name="intro_title">Welcome to <font color="#39c7a5">Digital Store</font>\n a<font color="#39c7a5"> Gateway </font>to the Last Tech</string>
+    <string name="intro_sub_title">Sign in to explore a wide range of cutting-edge\n
+    digital products. Don\'t have a account yet?\n
+    register now an enjoy a seamless\n
+        and secure shopping experience</string>
+    <string name="image_desc">This is the Image Description</string>
+    <string name="signing">Already have an account? <font color="#39c7a5">Sign In</font></string>
+    <string name="let_s_get_started">Let\'s get Started</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="see_all">See all</string>
+    <string name="categories">Categories</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="name">Vivek</string>
+    <string name="profile">Profile</string>
+    <string name="my_order">My Order</string>
+    <string name="explorer">Explorer</string>
+    <string name="cart">Cart</string>
+    <string name="favorite">Favorite</string>
+    <string name="title">Title</string>
+    <string name="rate">4.5</string>
 </resources>
