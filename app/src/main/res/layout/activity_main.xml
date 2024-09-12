@@ -35,13 +35,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/welcome_back"
+                        android:text="@string/welcome"
                         android:textColor="@color/black" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/name"
+                        android:text="@string/app_name"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
