@@ -2,8 +2,9 @@ package in.innovateria.onlinestore.Models;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-public class ProductModel {
+public class ProductModel implements Serializable {
     @SerializedName("categoryId")
     int categoryId;
 
@@ -28,7 +29,8 @@ public class ProductModel {
     @SerializedName("title")
     String title;
 
-    public ProductModel() {
+    public ProductModel (){
+        // Firebase required default Constructor
     }
 
     public void setCategoryId(int categoryId) {

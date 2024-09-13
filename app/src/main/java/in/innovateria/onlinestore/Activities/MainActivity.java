@@ -118,7 +118,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<ProductModel> productList) {
                 recommendationProgressBar.setVisibility(View.GONE);
-                productAdapter = new ProductAdapter(MainActivity.this, productList);
+                List<ProductModel> filteredProductList = new ArrayList<>();
+                for (ProductModel product : productList) {
+                    if (product.getShowRecommended()) {
+                        filteredProductList.add(product);
+                    }
+                }
+                productAdapter = new ProductAdapter(MainActivity.this, filteredProductList);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
                 recommendationRecyclerView.setLayoutManager(gridLayoutManager);
                 recommendationRecyclerView.setAdapter(productAdapter);

@@ -1,6 +1,8 @@
 package in.innovateria.onlinestore.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
+import in.innovateria.onlinestore.Activities.ProductDetailActivity;
 import in.innovateria.onlinestore.Models.ProductModel;
 import in.innovateria.onlinestore.R;
 
@@ -31,24 +34,28 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(view);
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         ProductModel product = productList.get(position);
 
-        // Load the product image using Glide
         Glide.with(context)
-                .load(product.getPicUrl().get(0))  // Assuming picUrl is a List<String> and you want the first URL
+                .load(product.getPicUrl().get(0))
                 .apply(new RequestOptions().placeholder(R.drawable.grey_bg))
                 .into(holder.productImage);
 
-        // Set other views
         holder.titleText.setText(product.getTitle());
         holder.rating.setText(String.valueOf(product.getRating()));
         holder.priceText.setText(String.format("$%d", product.getPrice()));
 
-        // Handle favorites button click
         holder.favBtn.setOnClickListener(v -> {
-            // Implement favorite button click logic here
+            // TODO :Implement favorite button click logic here
+        });
+
+        holder.productImage.setOnClickListener(v->{
+            Intent intent = new Intent(context, ProductDetailActivity.class);
+            intent.putExtra("productObject", product);
+            context.startActivity(intent);
         });
     }
 
