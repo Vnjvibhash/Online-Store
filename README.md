@@ -24,4 +24,5 @@ Welcome to the Online Store App! This mobile app is designed for seamless online
     <img src="assets/Screenshot_20240913_133839.png" alt="Screenshot 1" style="width: 200px; height: 500px; object-fit: cover;">
     <img src="assets/Screenshot_20240913_134031.png" alt="Screenshot 2" style="width: 200px; height: 500px; object-fit: cover;">
     <img src="assets/Screenshot_20240913_134138.png" alt="Screenshot 3" style="width: 200px; height: 500px; object-fit: cover;">
+    <img src="assets/Screenshot_20240913_230438.png" alt="Screenshot 3" style="width: 200px; height: 500px; object-fit: cover;">
 </div>

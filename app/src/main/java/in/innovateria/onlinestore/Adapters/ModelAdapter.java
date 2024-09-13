@@ -19,7 +19,7 @@ import in.innovateria.onlinestore.R;
 public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelViewHolder> {
     private List<String> modelList;
     private Context context;
-    private int selectedPosition = RecyclerView.NO_POSITION;
+    private int selectedPosition = 0;
     private ProductDetailActivity activity;
 
     public ModelAdapter(Context context, List<String> modelList, ProductDetailActivity activity) {

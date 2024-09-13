@@ -34,6 +34,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         TextView priceText = findViewById(R.id.priceText);
         TextView ratingText = findViewById(R.id.ratingText);
         TextView descriptionText = findViewById(R.id.descriptionText);
+        ImageView backBtn = findViewById(R.id.backBtn);
         ImageView productImageView = findViewById(R.id.productImage);
         RecyclerView productImgList = findViewById(R.id.productImgList);
         RecyclerView modelList = findViewById(R.id.modelList);
@@ -65,6 +66,10 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         addToCartBtn.setOnClickListener(v->{
             Toast.makeText(this, "Model "+selectedModel+" is Selected", Toast.LENGTH_SHORT).show();
+        });
+
+        backBtn.setOnClickListener(v->{
+            finish();
         });
 
     }
