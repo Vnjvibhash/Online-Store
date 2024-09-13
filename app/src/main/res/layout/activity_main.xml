@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".Activities.MainActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -18,12 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="100dp">
+            android:paddingBottom="80dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -72,6 +73,7 @@
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
+                    android:layout_marginHorizontal="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +83,7 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:indeterminateTint="@color/green"
+                    android:indeterminateTint="@color/puerto_rico"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +103,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/viewPager"
-                    app:selectedDotColor="@color/green"
+                    app:selectedDotColor="@color/puerto_rico"
                     tools:visibility="visible" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -127,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/see_all"
-                    android:textColor="@color/green" />
+                    android:textColor="@color/primary_green" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -150,7 +152,7 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:indeterminateTint="@color/green"
+                    android:indeterminateTint="@color/puerto_rico"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +181,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/see_all"
-                    android:textColor="@color/green" />
+                    android:textColor="@color/primary_green" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -202,7 +204,7 @@
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:indeterminateTint="@color/green"
+                    android:indeterminateTint="@color/puerto_rico"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -218,7 +220,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="12dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -227,7 +229,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="bottom"
-            android:background="@drawable/green_button_bg">
+            android:background="@drawable/button_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"

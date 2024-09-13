@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Online Store</string>
-    <string name="intro_title">Welcome to <font color="#39c7a5">Digital Store</font>\n a<font color="#39c7a5"> Gateway </font>to the Last Tech</string>
+    <string name="intro_title">Welcome to <font color="#39c7a5">Online Store</font>\nYour <font color="#39c7a5">Gateway</font> to Cutting-Edge Tech</string>
     <string name="intro_sub_title">Sign in to explore a wide range of cutting-edge\n
     digital products. Don\'t have a account yet?\n
     register now an enjoy a seamless\n

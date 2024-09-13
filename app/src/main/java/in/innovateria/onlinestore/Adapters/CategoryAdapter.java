@@ -51,7 +51,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         // Set background based on whether the item is selected
         if (selectedPosition == position) {
             holder.categoryImage.setBackgroundResource(0);
-            holder.mainLayout.setBackgroundResource(R.drawable.green_button_bg);
+            holder.mainLayout.setBackgroundResource(R.drawable.button_bg);
             holder.categoryName.setVisibility(View.VISIBLE);
             holder.categoryName.setTextColor(
                     ContextCompat.getColor(

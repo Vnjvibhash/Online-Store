@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient"
     tools:context=".Activities.IntroActivity">
 
     <ScrollView
+        android:id="@+id/contentPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -25,6 +26,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
+                android:minHeight="350dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/image_desc"
                 android:src="@drawable/intro_img" />
@@ -56,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
-                android:background="@drawable/green_button_bg"
+                android:background="@drawable/button_bg"
                 android:text="@string/let_s_get_started"
                 android:textColor="@color/white" />
 
@@ -71,6 +73,23 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/splash_screen_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <include
+            android:id="@+id/splash_layout"
+            layout="@layout/layout_splash" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

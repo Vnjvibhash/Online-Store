@@ -30,6 +30,7 @@ import in.innovateria.onlinestore.Models.CategoryModel;
 import in.innovateria.onlinestore.Models.ProductModel;
 import in.innovateria.onlinestore.R;
 import in.innovateria.onlinestore.Utils.AutoSlider;
+import in.innovateria.onlinestore.Utils.Constant;
 import in.innovateria.onlinestore.Utils.DBHelper;
 import in.innovateria.onlinestore.Utils.PageTransformer;
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Constant.setStatusBarColor(this, R.color.puerto_rico);
 
         bannerProgressBar = findViewById(R.id.bannerProgressBar);
         categoryProgressBar = findViewById(R.id.categoryProgressBar);
