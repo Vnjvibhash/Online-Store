@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">Online Store</string>
     <string name="intro_title">Welcome to <font color="#39c7a5">Online Store</font>\nYour <font color="#39c7a5">Gateway</font> to Cutting-Edge Tech</string>
-    <string name="intro_sub_title">Sign in to explore a wide range of cutting-edge\n
-    digital products. Don\'t have a account yet?\n
-    register now an enjoy a seamless\n
-        and secure shopping experience</string>
+    <string name="intro_sub_title">Sign in to explore a vast selection of cutting-edge\n digital products.
+    Don’t have an account?\n Register now for a seamless and secure shopping experience.</string>
     <string name="image_desc">This is the Image Description</string>
     <string name="signing">Already have an account? <font color="#39c7a5">Sign In</font></string>
     <string name="let_s_get_started">Let\'s get Started</string>
