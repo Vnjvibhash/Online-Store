@@ -1,7 +1,9 @@
 package in.innovateria.onlinestore.Models;
 
 import java.util.List;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class ProductModel implements Serializable {
@@ -10,6 +12,9 @@ public class ProductModel implements Serializable {
 
     @SerializedName("description")
     String description;
+
+    @SerializedName("id")
+    int id;
 
     @SerializedName("model")
     List<String> model;
@@ -29,13 +34,25 @@ public class ProductModel implements Serializable {
     @SerializedName("title")
     String title;
 
-    public ProductModel (){
+    @SerializedName("quantity")
+    private int quantity = 1;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public ProductModel() {
         // Firebase required default Constructor
     }
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
+
     public int getCategoryId() {
         return categoryId;
     }
@@ -43,13 +60,23 @@ public class ProductModel implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getDescription() {
         return description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setModel(List<String> model) {
         this.model = model;
     }
+
     public List<String> getModel() {
         return model;
     }
@@ -57,6 +84,7 @@ public class ProductModel implements Serializable {
     public void setPicUrl(List<String> picUrl) {
         this.picUrl = picUrl;
     }
+
     public List<String> getPicUrl() {
         return picUrl;
     }
@@ -64,6 +92,7 @@ public class ProductModel implements Serializable {
     public void setPrice(int price) {
         this.price = price;
     }
+
     public int getPrice() {
         return price;
     }
@@ -71,6 +100,7 @@ public class ProductModel implements Serializable {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
     public double getRating() {
         return rating;
     }
@@ -78,6 +108,7 @@ public class ProductModel implements Serializable {
     public void setShowRecommended(boolean showRecommended) {
         this.showRecommended = showRecommended;
     }
+
     public boolean getShowRecommended() {
         return showRecommended;
     }
@@ -85,6 +116,7 @@ public class ProductModel implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getTitle() {
         return title;
     }

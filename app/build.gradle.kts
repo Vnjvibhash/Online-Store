@@ -47,5 +47,7 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.gson)
     implementation(libs.dotsindicator)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
 
 }

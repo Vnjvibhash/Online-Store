@@ -1,7 +1,9 @@
 package in.innovateria.onlinestore.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import in.innovateria.onlinestore.Activities.ProductActivity;
 import in.innovateria.onlinestore.Models.CategoryModel;
 import in.innovateria.onlinestore.R;
 
@@ -91,6 +94,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             selectedPosition = holder.getAdapterPosition();
             notifyItemChanged(previousPosition);
             notifyItemChanged(selectedPosition);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(context, ProductActivity.class);
+                    intent.putExtra("categoryID",category.getId());
+                    intent.putExtra("categoryTitle",category.getTitle());
+                    context.startActivity(intent);
+                }
+            }, 500);
         });
     }
 

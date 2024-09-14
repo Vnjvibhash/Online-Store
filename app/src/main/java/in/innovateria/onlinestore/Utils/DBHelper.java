@@ -1,6 +1,7 @@
 package in.innovateria.onlinestore.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.google.firebase.database.DataSnapshot;
@@ -11,8 +12,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.innovateria.onlinestore.Activities.MainActivity;
 import in.innovateria.onlinestore.Models.BannerModel;
 import in.innovateria.onlinestore.Models.CategoryModel;
+import in.innovateria.onlinestore.Models.OrderModel;
 import in.innovateria.onlinestore.Models.ProductModel;
 
 public class DBHelper {
@@ -20,12 +23,15 @@ public class DBHelper {
     private DatabaseReference bannerReference;
     private DatabaseReference categoryReference;
     private DatabaseReference productReference;
+    private DatabaseReference ordersReference;
+    private CartManager cartManager;
 
     public DBHelper(Context context) {
         this.context = context;
         this.bannerReference = FirebaseDatabase.getInstance().getReference("Banner");
         this.categoryReference = FirebaseDatabase.getInstance().getReference("Category");
         this.productReference = FirebaseDatabase.getInstance().getReference("Items");
+        this.ordersReference = FirebaseDatabase.getInstance().getReference("Orders");
     }
 
     public void fetchBannerData(DataCallback<List<BannerModel>> callback) {
@@ -105,6 +111,25 @@ public class DBHelper {
             }
         });
     }
+
+    public void submitOrderToFirebase(OrderModel orderModel) {
+        cartManager = new CartManager(context);
+        String orderId = ordersReference.push().getKey();
+        if (orderId != null) {
+            orderModel.setOrderId(orderId);
+            ordersReference.child(orderId).setValue(orderModel)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(context, "Order placed successfully!", Toast.LENGTH_SHORT).show();
+                            cartManager.clearCart();
+                            context.startActivity(new Intent(context, MainActivity.class));
+                        } else {
+                            Toast.makeText(context, "Failed to place order.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
 
     // Callback interface
     public interface DataCallback<T> {

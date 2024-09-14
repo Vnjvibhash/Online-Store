@@ -43,7 +43,7 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelViewHol
             holder.modelText.setTextColor(
                     ContextCompat.getColor(
                             holder.modelText.getContext(),
-                            R.color.white
+                            R.color.light_green
                     )
             );
         }else{

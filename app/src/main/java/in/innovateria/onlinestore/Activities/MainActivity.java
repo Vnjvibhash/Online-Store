@@ -1,7 +1,9 @@
 package in.innovateria.onlinestore.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         recommendationProgressBar = findViewById(R.id.recommendationProgressBar);
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         recommendationRecyclerView = findViewById(R.id.recommendationRecyclerView);
+        ImageView cartBtn = findViewById(R.id.cartBtn);
 
         viewPager = findViewById(R.id.viewPager);
         dotIndicator = findViewById(R.id.dotIndicator);
@@ -65,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         getBannerData();
         getCategoryData();
         getRecommendationData();
+
+        cartBtn.setOnClickListener(v->{
+            startActivity(new Intent(this,CartActivity.class));
+        });
     }
 
     private void getBannerData() {

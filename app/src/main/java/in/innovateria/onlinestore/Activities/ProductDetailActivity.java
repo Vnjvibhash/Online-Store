@@ -1,7 +1,9 @@
 package in.innovateria.onlinestore.Activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +20,12 @@ import in.innovateria.onlinestore.Adapters.ImageAdapter;
 import in.innovateria.onlinestore.Adapters.ModelAdapter;
 import in.innovateria.onlinestore.Models.ProductModel;
 import in.innovateria.onlinestore.R;
+import in.innovateria.onlinestore.Utils.CartManager;
 import in.innovateria.onlinestore.Utils.Constant;
 
 public class ProductDetailActivity extends AppCompatActivity {
-    private String selectedModel;
+    public String selectedModel;
+    private CartManager cartManager;
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -35,6 +39,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         TextView ratingText = findViewById(R.id.ratingText);
         TextView descriptionText = findViewById(R.id.descriptionText);
         ImageView backBtn = findViewById(R.id.backBtn);
+        ImageButton cartBtn = findViewById(R.id.cartBtn);
         ImageView productImageView = findViewById(R.id.productImage);
         RecyclerView productImgList = findViewById(R.id.productImgList);
         RecyclerView modelList = findViewById(R.id.modelList);
@@ -64,12 +69,29 @@ public class ProductDetailActivity extends AppCompatActivity {
             modelList.setAdapter(modelAdapter);
         }
 
-        addToCartBtn.setOnClickListener(v->{
-            Toast.makeText(this, "Model "+selectedModel+" is Selected", Toast.LENGTH_SHORT).show();
+        cartManager = new CartManager(this);
+
+        addToCartBtn.setOnClickListener(v -> {
+            assert product != null;
+            ProductModel cartItem = cartManager.getCartItemById(product.getId());
+            if (cartItem != null) {
+                cartItem.setQuantity(cartItem.getQuantity() + 1);
+                cartManager.updateCart(cartItem);
+                Toast.makeText(this, "Product Updated Successfully", Toast.LENGTH_SHORT).show();
+            } else {
+                product.setQuantity(1);
+                cartManager.addToCart(product);
+                Toast.makeText(this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
+            }
         });
+
 
         backBtn.setOnClickListener(v->{
             finish();
+        });
+
+        cartBtn.setOnClickListener(v->{
+            startActivity(new Intent(this,CartActivity.class));
         });
 
     }

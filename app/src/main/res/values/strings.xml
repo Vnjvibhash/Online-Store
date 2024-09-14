@@ -14,11 +14,23 @@
     <string name="profile">Profile</string>
     <string name="my_order">My Order</string>
     <string name="explorer">Explorer</string>
-    <string name="cart">Cart</string>
+    <string name="cart">My Cart</string>
+    <string name="empty_cart">Your Cart is Empty</string>
     <string name="favorite">Favorite</string>
     <string name="title">Title</string>
     <string name="rate">4.5</string>
     <string name="price">$0</string>
     <string name="select_model">Select Model</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="total">Total</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="cash">Cash</string>
+    <string name="cash_desc">Pay Cash only when your Item is arrived at your destination point.</string>
+    <string name="bank">Bank Transfer</string>
+    <string name="bank_desc">Login to your Bank Account and make the payment. or you can pay via G-Pay</string>
+    <string name="checkout">Check Out</string>
+
 </resources>
