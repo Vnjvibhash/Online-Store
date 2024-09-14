@@ -2,6 +2,8 @@ package in.innovateria.onlinestore.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -16,7 +18,10 @@ public class CartManager {
     private static final String CART_PREFS = "CartPrefs";
 
     public CartManager(Context context) {
-        sharedPreferences = context.getSharedPreferences(CART_PREFS, Context.MODE_PRIVATE);
+        this.sharedPreferences = context.getSharedPreferences(CART_PREFS, Context.MODE_PRIVATE);
+    }
+
+    public void setOnCartUpdateListener(OnCartUpdateListener listener) {
     }
 
     // Save the product to the cart (JSON serialization can be used here)
@@ -64,6 +69,15 @@ public class CartManager {
     public void clearCart() {
         sharedPreferences.edit().clear().apply();
     }
+
+    public int getCartItemCount() {
+        return sharedPreferences.getAll().size();
+    }
+
+    public interface OnCartUpdateListener {
+        void onCartUpdated(int itemCount);
+    }
+
 }
 
 

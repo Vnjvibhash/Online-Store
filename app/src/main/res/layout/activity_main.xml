@@ -264,31 +264,54 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:gravity="top|center_horizontal">
+
+                    <!-- Badge Count -->
 
                     <ImageView
-                        android:id="@+id/cartBtn"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_gravity="center"
+                        android:layout_marginStart="26dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="27dp"
                         android:contentDescription="@string/image_desc"
                         app:srcCompat="@drawable/btn_2" />
+
+                    <TextView
+                        android:id="@+id/cartBadge"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/badge_bg"
+                        android:text="3"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/cartText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="0dp"
                         android:text="@string/cart"
                         android:textAlignment="center"
-                        android:textSize="11sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -304,15 +327,16 @@
                         android:layout_marginTop="8dp"
                         android:contentDescription="@string/image_desc"
                         app:srcCompat="@drawable/btn_3" />
+
                     <TextView
                         android:id="@+id/favoriteText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="@string/favorite"
                         android:textAlignment="center"
-                        android:textSize="11sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -330,15 +354,16 @@
                         android:layout_marginTop="8dp"
                         android:contentDescription="@string/image_desc"
                         app:srcCompat="@drawable/btn_4" />
+
                     <TextView
                         android:id="@+id/orderText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="@string/my_order"
                         android:textAlignment="center"
-                        android:textSize="11sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -356,15 +381,16 @@
                         android:layout_marginTop="8dp"
                         android:contentDescription="@string/image_desc"
                         app:srcCompat="@drawable/btn_5" />
+
                     <TextView
                         android:id="@+id/profileText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="@string/profile"
                         android:textAlignment="center"
-                        android:textSize="11sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
 
                 </LinearLayout>
             </LinearLayout>

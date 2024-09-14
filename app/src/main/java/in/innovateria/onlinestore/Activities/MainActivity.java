@@ -3,22 +3,18 @@ package in.innovateria.onlinestore.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
@@ -32,6 +28,7 @@ import in.innovateria.onlinestore.Models.CategoryModel;
 import in.innovateria.onlinestore.Models.ProductModel;
 import in.innovateria.onlinestore.R;
 import in.innovateria.onlinestore.Utils.AutoSlider;
+import in.innovateria.onlinestore.Utils.CartManager;
 import in.innovateria.onlinestore.Utils.Constant;
 import in.innovateria.onlinestore.Utils.DBHelper;
 import in.innovateria.onlinestore.Utils.PageTransformer;
@@ -46,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private DotsIndicator dotIndicator;
     private AutoSlider autoSlider;
     private DBHelper dbHelper;
+    TextView cartBadgeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Constant.setStatusBarColor(this, R.color.puerto_rico);
 
+        cartBadgeTextView = findViewById(R.id.cartBadge);
+
         bannerProgressBar = findViewById(R.id.bannerProgressBar);
         categoryProgressBar = findViewById(R.id.categoryProgressBar);
         recommendationProgressBar = findViewById(R.id.recommendationProgressBar);
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView);
         recommendationRecyclerView = findViewById(R.id.recommendationRecyclerView);
-        ImageView cartBtn = findViewById(R.id.cartBtn);
+        RelativeLayout cartBtn = findViewById(R.id.cartBtn);
 
         viewPager = findViewById(R.id.viewPager);
         dotIndicator = findViewById(R.id.dotIndicator);
