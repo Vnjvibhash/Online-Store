@@ -38,9 +38,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.play.services.auth)
 
     //Implement New dependencies
     implementation(libs.firebase.database)
@@ -49,5 +51,9 @@ dependencies {
     implementation(libs.dotsindicator)
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
+
+    // Country Code Picker
+    implementation(libs.ccp)
+
 
 }

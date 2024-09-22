@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -18,6 +19,7 @@ import in.innovateria.onlinestore.Utils.Constant;
 
 public class IntroActivity extends AppCompatActivity {
     AppCompatButton startBtn;
+    TextView login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,14 @@ public class IntroActivity extends AppCompatActivity {
         splashLogic();
 
         startBtn = findViewById(R.id.startBtn);
+        login = findViewById(R.id.login);
 
         startBtn.setOnClickListener(v->{
             startActivity(new Intent(this, MainActivity.class));
+        });
+
+        login.setOnClickListener(v->{
+            startActivity(new Intent(this, LogInActivity.class));
         });
 
     }
