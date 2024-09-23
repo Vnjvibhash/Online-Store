@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".Activities.IntroActivity">
+    tools:context=".Activities.WelcomeActivity">
 
     <ScrollView
         android:id="@+id/contentPanel"
@@ -58,18 +58,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/bg_round"
                 android:text="@string/let_s_get_started"
                 android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/login"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/google_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/signing"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:layout_marginBottom="16dp"/>
+                android:text="@string/start_with_gmail"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:shadowColor="@color/black"
+                android:backgroundTint="@color/white"
+                android:padding="14dp"
+                android:layout_marginHorizontal="32dp"
+                app:strokeColor="@color/black"
+                app:icon="@drawable/ic_google"
+                app:iconTint="@color/design_default_color_background"
+                app:iconTintMode="multiply"
+                app:iconGravity="textStart"/>
 
         </LinearLayout>
     </ScrollView>
@@ -90,6 +99,5 @@
             android:id="@+id/splash_layout"
             layout="@layout/layout_splash" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

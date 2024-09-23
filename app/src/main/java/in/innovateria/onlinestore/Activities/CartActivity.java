@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import in.innovateria.onlinestore.Adapters.CartAdapter;
 import in.innovateria.onlinestore.Models.OrderModel;
@@ -45,6 +46,7 @@ public class CartActivity extends AppCompatActivity {
     public TextView emptyText, subTotalText,deliveryFeeText, taxText, grandTotal;
     private AppCompatButton checkOutBtn;
     private DBHelper dbHelper;
+    Constant constant = new Constant();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,10 +105,10 @@ public class CartActivity extends AppCompatActivity {
 
         checkOutBtn.setOnClickListener(v -> {
             List<ProductModel> cartItems = cartManager.getCartItems();
-
+            Map<String,Object> userMap = constant.getUserMapFromPreferences(CartActivity.this);
             String orderId = "";
             String orderDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-            String userId = "06121996";
+            String userId = (String) userMap.get("id");
             String orderStatus = "Pending";
 
             OrderModel orderModel = new OrderModel(orderId, orderDate, userId, paymentMode, orderStatus, cartItems);

@@ -2,12 +2,19 @@ package in.innovateria.onlinestore.Utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.Map;
 
 public class Constant {
     public static void setStatusBarColor(Activity activity, int colorResId) {
@@ -39,4 +46,27 @@ public class Constant {
             cartBadgeTextView.setVisibility(View.GONE);
         }
     }
+
+    public static void saveUserMapToPreferences(Map<String, Object> userMap, Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(userMap);
+
+        editor.putString("userMap", json);
+        editor.apply();
+    }
+
+    public Map<String, Object> getUserMapFromPreferences(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String json = sharedPreferences.getString("userMap", null);
+
+        if (json != null) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<Map<String, Object>>() {}.getType();
+            return gson.fromJson(json, type);
+        }
+        return null;
+    }
+
 }

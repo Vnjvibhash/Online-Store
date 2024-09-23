@@ -6,6 +6,7 @@
     <string name="image_desc">This is the Image Description</string>
     <string name="signing">Already have an account? <font color="#39c7a5">Sign In</font></string>
     <string name="let_s_get_started">Let\'s get Started</string>
+    <string name="start_with_gmail">Continue With Gmail</string>
     <string name="recommendation">Recommendation</string>
     <string name="see_all">See all</string>
     <string name="categories">Categories</string>
@@ -33,6 +34,7 @@
     <string name="bank_desc">Login to your Bank Account and make the payment. or you can pay via G-Pay</string>
     <string name="checkout">Check Out</string>
     <string name="dont_have_account">Don\'t have account? <font color="#39c7a5">Continue</font></string>
-    <string name="default_web_client_id">314812134896-6q722oluhb0bk4s7poqh27jgfjineqpj.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">314812134896-6q722oluhb0bk4s7poqh27jgfjineqpj.apps.googleusercontent.com</string>
+    <string name="google_web_client_id">135422342342-ms0em9kvomd4qjmi0vh86kko94ekku25.apps.googleusercontent.com</string>
 
 </resources>
