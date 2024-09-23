@@ -3,6 +3,7 @@ package in.innovateria.onlinestore.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private AutoSlider autoSlider;
     private DBHelper dbHelper;
     TextView cartBadgeTextView;
+    ImageView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Constant.setStatusBarColor(this, R.color.puerto_rico);
 
+        logout = findViewById(R.id.logout);
         cartBadgeTextView = findViewById(R.id.cartBadge);
 
         bannerProgressBar = findViewById(R.id.bannerProgressBar);
@@ -71,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
         cartBtn.setOnClickListener(v->{
             startActivity(new Intent(this,CartActivity.class));
+        });
+        logout.setOnClickListener(v->{
+            Constant.clearUserPreferences(this);
+            startActivity(new Intent(this,WelcomeActivity.class));
+            finish();
         });
     }
 

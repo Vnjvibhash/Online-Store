@@ -69,4 +69,11 @@ public class Constant {
         return null;
     }
 
+    public static void clearUserPreferences(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
 }

@@ -1,5 +1,6 @@
 package in.innovateria.onlinestore.Activities;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -106,13 +107,18 @@ public class CartActivity extends AppCompatActivity {
         checkOutBtn.setOnClickListener(v -> {
             List<ProductModel> cartItems = cartManager.getCartItems();
             Map<String,Object> userMap = constant.getUserMapFromPreferences(CartActivity.this);
-            String orderId = "";
-            String orderDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-            String userId = (String) userMap.get("id");
-            String orderStatus = "Pending";
+            if (userMap != null) {
+                String orderId = "";
+                String orderDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                String userId = (String) userMap.get("id");
+                String orderStatus = "Pending";
 
-            OrderModel orderModel = new OrderModel(orderId, orderDate, userId, paymentMode, orderStatus, cartItems);
-            dbHelper.submitOrderToFirebase(orderModel);
+                OrderModel orderModel = new OrderModel(orderId, orderDate, userId, paymentMode, orderStatus, cartItems);
+                dbHelper.submitOrderToFirebase(orderModel);
+            }else{
+                startActivity(new Intent(CartActivity.this,WelcomeActivity.class));
+                finish();
+            }
         });
 
     }

@@ -58,11 +58,13 @@
                     app:srcCompat="@drawable/bell_icon" />
 
                 <ImageView
-                    android:id="@+id/search"
+                    android:id="@+id/logout"
+                    android:background="@drawable/bg_round"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/image_desc"
-                    app:srcCompat="@drawable/search_icon" />
+                    app:srcCompat="@drawable/logout_icon" />
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
